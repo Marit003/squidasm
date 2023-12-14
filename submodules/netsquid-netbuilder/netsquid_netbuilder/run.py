@@ -5,6 +5,7 @@ from typing import Dict
 
 import netsquid as ns
 from netsquid_magic.models.depolarise import DepolariseLinkBuilder, DepolariseLinkConfig
+from netsquid_magic.models.fibre import FibreLinkBuilder, FibreLinkConfig
 from netsquid_magic.models.heralded_double_click import (
     HeraldedDoubleClickLinkBuilder,
     HeraldedDoubleClickLinkConfig,
@@ -54,6 +55,7 @@ def get_default_builder() -> NetworkBuilder:
         HeraldedDoubleClickLinkConfig,
     )
     builder.register_link("nv", NVLinkBuilder, NVLinkConfig)
+    builder.register_link("fibre", FibreLinkBuilder, FibreLinkConfig)
 
     # default clink models registration
     builder.register_clink("instant", InstantCLinkBuilder, InstantCLinkConfig)

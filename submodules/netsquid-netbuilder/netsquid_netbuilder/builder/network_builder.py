@@ -69,6 +69,7 @@ class NetworkBuilder:
             )
         )
 
+        # NOTE: implementing the links twice?
         network.links = self.link_builder.build(config, network.nodes)
         network.links.update(self.hub_builder.build_links(network))
 
@@ -152,6 +153,7 @@ class ClassicalConnectionBuilder:
         return ports
 
 
+# TODO: fix this to include ns.QuantumChannel
 class LinkBuilder:
     def __init__(self, protocol_controller: ProtocolController):
         self.protocol_controller = protocol_controller
